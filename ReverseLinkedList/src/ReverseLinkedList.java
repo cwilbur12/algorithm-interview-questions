@@ -1,4 +1,5 @@
 
+
 public class ReverseLinkedList {
 	
 	public static void main(String[] args){
@@ -9,7 +10,9 @@ public class ReverseLinkedList {
 		
 		System.out.println(myList.toString());
 		
-		System.out.println(reverse(myList).toString());
+		//System.out.println(reverse(myList).toString());
+		
+		System.out.println(reverseIter(myList).toString());
 
 		
 	}
@@ -28,7 +31,20 @@ public class ReverseLinkedList {
 		
 		return remainingReverse;
 	}
+	
+	public static List reverseIter(List Node) {
+	    List previous = null;
+	    while (Node != null) {
+			List next = Node.next;
+	        Node.next = previous;
+	        previous = Node;
+	        Node = next;
+	    }
+	    return previous;
+	}
 }
+
+
 
 
 class List{
