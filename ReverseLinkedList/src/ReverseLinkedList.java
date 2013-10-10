@@ -35,10 +35,10 @@ public class ReverseLinkedList {
 	public static List reverseIter(List Node) {
 	    List previous = null;
 	    while (Node != null) {
-			List next = Node.next;
-	        Node.next = previous;
-	        previous = Node;
-	        Node = next;
+			List next = Node.next; //Step 1: first so we have it when we need to get the next one in the list
+	        Node.next = previous; //Step 2: make the current nodes next the node that has already been moved (the one before it or n-1)
+	        previous = Node; //Step 3: now the current node will become previous for the next round
+	        Node = next; //Step 4: make the current node the node you got from step 1.
 	    }
 	    return previous;
 	}
